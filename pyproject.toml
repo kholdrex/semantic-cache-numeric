@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "numcache"
+version = "1.0.0"
+description = "Correctness of semantic caching of LLM answers to numerical questions"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Oleksandr Kholodniak" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy==2.2.6",
+    "matplotlib==3.10.3",
+    "requests==2.32.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+numcache = "numcache.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
