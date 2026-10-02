@@ -1,0 +1,1288 @@
+{
+ "n_test": 8440,
+ "n_test_answerable": 7385,
+ "n_dev": 2112,
+ "no_cache": {
+  "hit_rate": 0.0,
+  "wrong_reuse": 0.0,
+  "precision": null,
+  "accuracy": 0.8882870683818551,
+  "seconds": 15.721854992329819,
+  "tokens": 392.54028436018956
+ },
+ "seed_accuracy_test": 0.9545023696682464,
+ "reusable_test": 0.3254739336492891,
+ "embedding_seconds": {
+  "all-minilm": 0.014186727754594718,
+  "bge-m3": 0.05328625689377793
+ },
+ "verifier_seconds": {
+  "qwen2.5:3b-instruct": {
+   "mean": 0.2993813064026574,
+   "p95": 0.4953732001362368
+  },
+  "qwen2.5:7b-instruct": {
+   "mean": 0.44027611770774105,
+   "p95": 0.8081292896531521
+  }
+ },
+ "by_kind": {
+  "problem understanding": {
+   "reuse_correct": 0.9545023696682464,
+   "median_similarity": 0.937469482421875,
+   "remote_correct": 0.9374407582938389
+  },
+  "distraction insertion": {
+   "reuse_correct": 0.9545023696682464,
+   "median_similarity": 0.9494976997375488,
+   "remote_correct": 0.9014218009478673
+  },
+  "integer-decimal-fraction conversion": {
+   "reuse_correct": 0.5014218009478673,
+   "median_similarity": 0.9757189154624939,
+   "remote_correct": 0.8928909952606635
+  },
+  "numerical substitution": {
+   "reuse_correct": 0.05687203791469194,
+   "median_similarity": 0.9636409878730774,
+   "remote_correct": 0.8900473933649289
+  },
+  "digit expansion": {
+   "reuse_correct": 0.07677725118483412,
+   "median_similarity": 0.9679332375526428,
+   "remote_correct": 0.9061611374407583
+  },
+  "adding operation": {
+   "reuse_correct": 0.03601895734597156,
+   "median_similarity": 0.969634473323822,
+   "remote_correct": 0.8161137440758294
+  },
+  "reversing operation": {
+   "reuse_correct": 0.023696682464454975,
+   "median_similarity": 0.9536982178688049,
+   "remote_correct": 0.8739336492890996
+  },
+  "critical thinking": {
+   "reuse_correct": 0.0,
+   "median_similarity": 0.9857663512229919,
+   "remote_correct": null
+  }
+ },
+ "policies": [
+  {
+   "policy": "exact",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.005,
+   "feasible": true,
+   "tau": null,
+   "v": null,
+   "dev": {
+    "hit_rate": 0.0,
+    "wrong_reuse": 0.0,
+    "precision": null,
+    "accuracy": 0.8885281385281385
+   },
+   "test": {
+    "hit_rate": 0.00011848341232227489,
+    "wrong_reuse": 0.00011848341232227489,
+    "precision": 0.0,
+    "accuracy": 0.8882870683818551
+   },
+   "hits_test": 1,
+   "latency": 15.71939293429773,
+   "remote_calls": 0.9998815165876778,
+   "remote_tokens": 392.50639810426543
+  },
+  {
+   "policy": "similarity",
+   "embedder": "all-minilm",
+   "verifier": null,
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.999255359172821,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.004734848484848485,
+    "wrong_reuse": 0.004734848484848485,
+    "precision": 0.0,
+    "accuracy": 0.8869047619047619
+   },
+   "test": {
+    "hit_rate": 0.0026066350710900474,
+    "wrong_reuse": 0.0026066350710900474,
+    "precision": 0.0,
+    "accuracy": 0.8865267433987813
+   },
+   "hits_test": 22,
+   "latency": 15.695729125583885,
+   "remote_calls": 0.99739336492891,
+   "remote_tokens": 391.49383886255924
+  },
+  {
+   "policy": "numbers",
+   "embedder": "all-minilm",
+   "verifier": null,
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.9613035321235657,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.01278409090909091,
+    "wrong_reuse": 0.004734848484848485,
+    "precision": 0.6296296296296297,
+    "accuracy": 0.8863636363636364
+   },
+   "test": {
+    "hit_rate": 0.011966824644549763,
+    "wrong_reuse": 0.005213270142180095,
+    "precision": 0.5643564356435643,
+    "accuracy": 0.8850372376438728
+   },
+   "hits_test": 101,
+   "latency": 15.567296275505008,
+   "remote_calls": 0.9880331753554502,
+   "remote_tokens": 388.13518957345974
+  },
+  {
+   "policy": "similarity",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.9984931349754333,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.004734848484848485,
+    "wrong_reuse": 0.004734848484848485,
+    "precision": 0.0,
+    "accuracy": 0.8858225108225108
+   },
+   "test": {
+    "hit_rate": 0.00556872037914692,
+    "wrong_reuse": 0.005213270142180095,
+    "precision": 0.06382978723404255,
+    "accuracy": 0.8876100203114421
+   },
+   "hits_test": 47,
+   "latency": 15.663901790475325,
+   "remote_calls": 0.9944312796208531,
+   "remote_tokens": 389.8732227488152
+  },
+  {
+   "policy": "numbers",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.9654982089996338,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.019412878787878788,
+    "wrong_reuse": 0.004734848484848485,
+    "precision": 0.7560975609756098,
+    "accuracy": 0.8863636363636364
+   },
+   "test": {
+    "hit_rate": 0.018127962085308057,
+    "wrong_reuse": 0.00556872037914692,
+    "precision": 0.6928104575163399,
+    "accuracy": 0.8849018280297901
+   },
+   "hits_test": 153,
+   "latency": 15.521964728864898,
+   "remote_calls": 0.9818720379146919,
+   "remote_tokens": 386.0318720379147
+  },
+  {
+   "policy": "verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:3b-instruct",
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.8161017894744873,
+   "v": 0.75,
+   "dev": {
+    "hit_rate": 0.025094696969696968,
+    "wrong_reuse": 0.003787878787878788,
+    "precision": 0.8490566037735849,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.028317535545023698,
+    "wrong_reuse": 0.005805687203791469,
+    "precision": 0.7949790794979079,
+    "accuracy": 0.8878808395396073
+   },
+   "hits_test": 239,
+   "latency": 15.63248317175717,
+   "remote_calls": 0.9716824644549763,
+   "remote_tokens": 381.471327014218
+  },
+  {
+   "policy": "numbers+verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:3b-instruct",
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.025,
+   "dev": {
+    "hit_rate": 0.04403409090909091,
+    "wrong_reuse": 0.001893939393939394,
+    "precision": 0.956989247311828,
+    "accuracy": 0.8896103896103896
+   },
+   "test": {
+    "hit_rate": 0.04087677725118483,
+    "wrong_reuse": 0.0022511848341232226,
+    "precision": 0.9449275362318841,
+    "accuracy": 0.888693297224103
+   },
+   "hits_test": 345,
+   "latency": 15.211706879624888,
+   "remote_calls": 0.9591232227488151,
+   "remote_tokens": 377.5504739336493
+  },
+  {
+   "policy": "verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:7b-instruct",
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.9446814060211182,
+   "v": 0.9750000000000001,
+   "dev": {
+    "hit_rate": 0.04214015151515151,
+    "wrong_reuse": 0.004734848484848485,
+    "precision": 0.8876404494382022,
+    "accuracy": 0.8885281385281385
+   },
+   "test": {
+    "hit_rate": 0.03542654028436019,
+    "wrong_reuse": 0.003909952606635071,
+    "precision": 0.8896321070234113,
+    "accuracy": 0.8882870683818551
+   },
+   "hits_test": 299,
+   "latency": 15.567468028946562,
+   "remote_calls": 0.9645734597156398,
+   "remote_tokens": 379.5107819905213
+  },
+  {
+   "policy": "numbers+verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:7b-instruct",
+   "target": 0.005,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.025,
+   "dev": {
+    "hit_rate": 0.078125,
+    "wrong_reuse": 0.0033143939393939395,
+    "precision": 0.9575757575757575,
+    "accuracy": 0.8896103896103896
+   },
+   "test": {
+    "hit_rate": 0.07677725118483412,
+    "wrong_reuse": 0.0027251184834123222,
+    "precision": 0.9645061728395061,
+    "accuracy": 0.8903182125930941
+   },
+   "hits_test": 648,
+   "latency": 14.734394996888208,
+   "remote_calls": 0.9232227488151659,
+   "remote_tokens": 365.2419431279621
+  },
+  {
+   "policy": "exact",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.01,
+   "feasible": true,
+   "tau": null,
+   "v": null,
+   "dev": {
+    "hit_rate": 0.0,
+    "wrong_reuse": 0.0,
+    "precision": null,
+    "accuracy": 0.8885281385281385
+   },
+   "test": {
+    "hit_rate": 0.00011848341232227489,
+    "wrong_reuse": 0.00011848341232227489,
+    "precision": 0.0,
+    "accuracy": 0.8882870683818551
+   },
+   "hits_test": 1,
+   "latency": 15.71939293429773,
+   "remote_calls": 0.9998815165876778,
+   "remote_tokens": 392.50639810426543,
+   "ci": {
+    "hit_rate": [
+     0.0,
+     0.00035545023696682463
+    ],
+    "wrong_reuse": [
+     0.0,
+     0.00035545023696682463
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.9374407582938389
+    },
+    "distraction insertion": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.9014218009478673
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8928909952606635
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8900473933649289
+    },
+    "digit expansion": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.9061611374407583
+    },
+    "adding operation": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8161137440758294
+    },
+    "reversing operation": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8739336492890996
+    },
+    "critical thinking": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "similarity",
+   "embedder": "all-minilm",
+   "verifier": null,
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.9988214373588562,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.010416666666666666,
+    "wrong_reuse": 0.009943181818181818,
+    "precision": 0.045454545454545456,
+    "accuracy": 0.8847402597402597
+   },
+   "test": {
+    "hit_rate": 0.006516587677725118,
+    "wrong_reuse": 0.006516587677725118,
+    "precision": 0.0,
+    "accuracy": 0.8842247799593771
+   },
+   "hits_test": 55,
+   "latency": 15.634441242324684,
+   "remote_calls": 0.9934834123222749,
+   "remote_tokens": 389.79549763033174,
+   "ci": {
+    "hit_rate": [
+     0.00462085308056872,
+     0.008530805687203791
+    ],
+    "wrong_reuse": [
+     0.00462085308056872,
+     0.008530805687203791
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.9374407582938389
+    },
+    "distraction insertion": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.9014218009478673
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.018957345971563982,
+     "wrong_reuse": 0.018957345971563982,
+     "precision": 0.0,
+     "accuracy": 0.8786729857819905
+    },
+    "numerical substitution": {
+     "hit_rate": 0.005687203791469194,
+     "wrong_reuse": 0.005687203791469194,
+     "precision": 0.0,
+     "accuracy": 0.8843601895734597
+    },
+    "digit expansion": {
+     "hit_rate": 0.009478672985781991,
+     "wrong_reuse": 0.009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8976303317535546
+    },
+    "adding operation": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8161137440758294
+    },
+    "reversing operation": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8739336492890996
+    },
+    "critical thinking": {
+     "hit_rate": 0.01800947867298578,
+     "wrong_reuse": 0.01800947867298578,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "numbers",
+   "embedder": "all-minilm",
+   "verifier": null,
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.7174440622329712,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.09691943127962085,
+    "wrong_reuse": 0.009834123222748814,
+    "precision": 0.8985330073349633,
+    "accuracy": 0.8858496953283683
+   },
+   "hits_test": 818,
+   "latency": 14.346742976640854,
+   "remote_calls": 0.9030805687203791,
+   "remote_tokens": 357.3759478672986,
+   "ci": {
+    "hit_rate": [
+     0.093125,
+     0.10118483412322275
+    ],
+    "wrong_reuse": [
+     0.007816943127962085,
+     0.012203791469194312
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.6739336492890995,
+     "wrong_reuse": 0.026540284360189573,
+     "precision": 0.960618846694796,
+     "accuracy": 0.9478672985781991
+    },
+    "distraction insertion": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.8333333333333334,
+     "accuracy": 0.9023696682464455
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.8928909952606635
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8900473933649289
+    },
+    "digit expansion": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.9061611374407583
+    },
+    "adding operation": {
+     "hit_rate": 0.03696682464454976,
+     "wrong_reuse": 0.03601895734597156,
+     "precision": 0.02564102564102564,
+     "accuracy": 0.7895734597156399
+    },
+    "reversing operation": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.9047619047619048,
+     "accuracy": 0.8720379146919431
+    },
+    "critical thinking": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.011374407582938388,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "similarity",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.9980148673057556,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.009943181818181818,
+    "wrong_reuse": 0.009943181818181818,
+    "precision": 0.0,
+    "accuracy": 0.8841991341991342
+   },
+   "test": {
+    "hit_rate": 0.007819905213270141,
+    "wrong_reuse": 0.007227488151658768,
+    "precision": 0.07575757575757576,
+    "accuracy": 0.8862559241706162
+   },
+   "hits_test": 66,
+   "latency": 15.627556503197322,
+   "remote_calls": 0.9921800947867299,
+   "remote_tokens": 388.91196682464454,
+   "ci": {
+    "hit_rate": [
+     0.006042654028436019,
+     0.009834123222748814
+    ],
+    "wrong_reuse": [
+     0.0054502369668246444,
+     0.009123222748815166
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.9374407582938389
+    },
+    "distraction insertion": {
+     "hit_rate": 0.0018957345971563982,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.9023696682464455
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.012322274881516588,
+     "wrong_reuse": 0.009478672985781991,
+     "precision": 0.23076923076923078,
+     "accuracy": 0.885308056872038
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8890995260663507
+    },
+    "digit expansion": {
+     "hit_rate": 0.006635071090047393,
+     "wrong_reuse": 0.006635071090047393,
+     "precision": 0.0,
+     "accuracy": 0.9004739336492891
+    },
+    "adding operation": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8151658767772512
+    },
+    "reversing operation": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8739336492890996
+    },
+    "critical thinking": {
+     "hit_rate": 0.03981042654028436,
+     "wrong_reuse": 0.03981042654028436,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "numbers",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.0962085308056872,
+    "wrong_reuse": 0.00971563981042654,
+    "precision": 0.8990147783251231,
+    "accuracy": 0.8859851049424509
+   },
+   "hits_test": 812,
+   "latency": 14.395388350389023,
+   "remote_calls": 0.9037914691943127,
+   "remote_tokens": 357.6259478672986,
+   "ci": {
+    "hit_rate": [
+     0.09229857819905213,
+     0.1004739336492891
+    ],
+    "wrong_reuse": [
+     0.00769845971563981,
+     0.011966824644549763
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.6682464454976303,
+     "wrong_reuse": 0.025592417061611375,
+     "precision": 0.9617021276595744,
+     "accuracy": 0.9488151658767773
+    },
+    "distraction insertion": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.8333333333333334,
+     "accuracy": 0.9023696682464455
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.8928909952606635
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8900473933649289
+    },
+    "digit expansion": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.9061611374407583
+    },
+    "adding operation": {
+     "hit_rate": 0.03696682464454976,
+     "wrong_reuse": 0.03601895734597156,
+     "precision": 0.02564102564102564,
+     "accuracy": 0.7895734597156399
+    },
+    "reversing operation": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.9047619047619048,
+     "accuracy": 0.8720379146919431
+    },
+    "critical thinking": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.011374407582938388,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:3b-instruct",
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.8127273917198181,
+   "v": 0.5,
+   "dev": {
+    "hit_rate": 0.043560606060606064,
+    "wrong_reuse": 0.009943181818181818,
+    "precision": 0.7717391304347826,
+    "accuracy": 0.8847402597402597
+   },
+   "test": {
+    "hit_rate": 0.04123222748815166,
+    "wrong_reuse": 0.01018957345971564,
+    "precision": 0.7528735632183908,
+    "accuracy": 0.8876100203114421
+   },
+   "hits_test": 348,
+   "latency": 15.428444031744695,
+   "remote_calls": 0.9587677725118483,
+   "remote_tokens": 376.27251184834125,
+   "ci": {
+    "hit_rate": [
+     0.03684834123222749,
+     0.045734597156398105
+    ],
+    "wrong_reuse": [
+     0.008056872037914692,
+     0.012440758293838863
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.24360189573459715,
+     "wrong_reuse": 0.011374407582938388,
+     "precision": 0.953307392996109,
+     "accuracy": 0.9440758293838862
+    },
+    "distraction insertion": {
+     "hit_rate": 0.0018957345971563982,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.9014218009478673
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.013270142180094787,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.8928909952606635
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8890995260663507
+    },
+    "digit expansion": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.9061611374407583
+    },
+    "adding operation": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8151658767772512
+    },
+    "reversing operation": {
+     "hit_rate": 0.013270142180094787,
+     "wrong_reuse": 0.012322274881516588,
+     "precision": 0.07142857142857142,
+     "accuracy": 0.8644549763033176
+    },
+    "critical thinking": {
+     "hit_rate": 0.055924170616113746,
+     "wrong_reuse": 0.055924170616113746,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "numbers+verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:3b-instruct",
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.0962085308056872,
+    "wrong_reuse": 0.00971563981042654,
+    "precision": 0.8990147783251231,
+    "accuracy": 0.8859851049424509
+   },
+   "hits_test": 812,
+   "latency": 14.424191386028713,
+   "remote_calls": 0.9037914691943127,
+   "remote_tokens": 357.6259478672986,
+   "ci": {
+    "hit_rate": [
+     0.09229857819905213,
+     0.1004739336492891
+    ],
+    "wrong_reuse": [
+     0.00769845971563981,
+     0.011966824644549763
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.6682464454976303,
+     "wrong_reuse": 0.025592417061611375,
+     "precision": 0.9617021276595744,
+     "accuracy": 0.9488151658767773
+    },
+    "distraction insertion": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.8333333333333334,
+     "accuracy": 0.9023696682464455
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.8928909952606635
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8900473933649289
+    },
+    "digit expansion": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.9061611374407583
+    },
+    "adding operation": {
+     "hit_rate": 0.03696682464454976,
+     "wrong_reuse": 0.03601895734597156,
+     "precision": 0.02564102564102564,
+     "accuracy": 0.7895734597156399
+    },
+    "reversing operation": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.9047619047619048,
+     "accuracy": 0.8720379146919431
+    },
+    "critical thinking": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.011374407582938388,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:7b-instruct",
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.775,
+   "dev": {
+    "hit_rate": 0.11268939393939394,
+    "wrong_reuse": 0.009943181818181818,
+    "precision": 0.9117647058823529,
+    "accuracy": 0.8896103896103896
+   },
+   "test": {
+    "hit_rate": 0.10592417061611374,
+    "wrong_reuse": 0.00995260663507109,
+    "precision": 0.9060402684563759,
+    "accuracy": 0.8881516587677725
+   },
+   "hits_test": 894,
+   "latency": 14.663829132773426,
+   "remote_calls": 0.8940758293838863,
+   "remote_tokens": 353.62488151658766,
+   "ci": {
+    "hit_rate": [
+     0.10177725118483412,
+     0.10995260663507109
+    ],
+    "wrong_reuse": [
+     0.007938388625592417,
+     0.012085308056872038
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.7459715639810427,
+     "wrong_reuse": 0.031279620853080566,
+     "precision": 0.9580686149936467,
+     "accuracy": 0.9488151658767773
+    },
+    "distraction insertion": {
+     "hit_rate": 0.021800947867298578,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.9014218009478673
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.029383886255924172,
+     "wrong_reuse": 0.002843601895734597,
+     "precision": 0.9032258064516129,
+     "accuracy": 0.8909952606635071
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8900473933649289
+    },
+    "digit expansion": {
+     "hit_rate": 0.0037914691943127963,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.5,
+     "accuracy": 0.9042654028436019
+    },
+    "adding operation": {
+     "hit_rate": 0.0,
+     "wrong_reuse": 0.0,
+     "precision": null,
+     "accuracy": 0.8161137440758294
+    },
+    "reversing operation": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.008530805687203791,
+     "precision": 0.25,
+     "accuracy": 0.8654028436018958
+    },
+    "critical thinking": {
+     "hit_rate": 0.035071090047393366,
+     "wrong_reuse": 0.035071090047393366,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "numbers+verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:7b-instruct",
+   "target": 0.01,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.0962085308056872,
+    "wrong_reuse": 0.00971563981042654,
+    "precision": 0.8990147783251231,
+    "accuracy": 0.8859851049424509
+   },
+   "hits_test": 812,
+   "latency": 14.437746668822518,
+   "remote_calls": 0.9037914691943127,
+   "remote_tokens": 357.6259478672986,
+   "ci": {
+    "hit_rate": [
+     0.09229857819905213,
+     0.1004739336492891
+    ],
+    "wrong_reuse": [
+     0.00769845971563981,
+     0.011966824644549763
+    ]
+   },
+   "by_kind": {
+    "problem understanding": {
+     "hit_rate": 0.6682464454976303,
+     "wrong_reuse": 0.025592417061611375,
+     "precision": 0.9617021276595744,
+     "accuracy": 0.9488151658767773
+    },
+    "distraction insertion": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.8333333333333334,
+     "accuracy": 0.9023696682464455
+    },
+    "integer-decimal-fraction conversion": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.8928909952606635
+    },
+    "numerical substitution": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0009478672985781991,
+     "precision": 0.0,
+     "accuracy": 0.8900473933649289
+    },
+    "digit expansion": {
+     "hit_rate": 0.0009478672985781991,
+     "wrong_reuse": 0.0,
+     "precision": 1.0,
+     "accuracy": 0.9061611374407583
+    },
+    "adding operation": {
+     "hit_rate": 0.03696682464454976,
+     "wrong_reuse": 0.03601895734597156,
+     "precision": 0.02564102564102564,
+     "accuracy": 0.7895734597156399
+    },
+    "reversing operation": {
+     "hit_rate": 0.01990521327014218,
+     "wrong_reuse": 0.0018957345971563982,
+     "precision": 0.9047619047619048,
+     "accuracy": 0.8720379146919431
+    },
+    "critical thinking": {
+     "hit_rate": 0.011374407582938388,
+     "wrong_reuse": 0.011374407582938388,
+     "precision": 0.0,
+     "accuracy": null
+    }
+   }
+  },
+  {
+   "policy": "exact",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.02,
+   "feasible": true,
+   "tau": null,
+   "v": null,
+   "dev": {
+    "hit_rate": 0.0,
+    "wrong_reuse": 0.0,
+    "precision": null,
+    "accuracy": 0.8885281385281385
+   },
+   "test": {
+    "hit_rate": 0.00011848341232227489,
+    "wrong_reuse": 0.00011848341232227489,
+    "precision": 0.0,
+    "accuracy": 0.8882870683818551
+   },
+   "hits_test": 1,
+   "latency": 15.71939293429773,
+   "remote_calls": 0.9998815165876778,
+   "remote_tokens": 392.50639810426543
+  },
+  {
+   "policy": "similarity",
+   "embedder": "all-minilm",
+   "verifier": null,
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.9982156753540039,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.020359848484848484,
+    "wrong_reuse": 0.019886363636363636,
+    "precision": 0.023255813953488372,
+    "accuracy": 0.8782467532467533
+   },
+   "test": {
+    "hit_rate": 0.012914691943127962,
+    "wrong_reuse": 0.012677725118483413,
+    "precision": 0.01834862385321101,
+    "accuracy": 0.8808395396073121
+   },
+   "hits_test": 109,
+   "latency": 15.505449097015,
+   "remote_calls": 0.987085308056872,
+   "remote_tokens": 386.84549763033175
+  },
+  {
+   "policy": "numbers",
+   "embedder": "all-minilm",
+   "verifier": null,
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.7174440622329712,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.09691943127962085,
+    "wrong_reuse": 0.009834123222748814,
+    "precision": 0.8985330073349633,
+    "accuracy": 0.8858496953283683
+   },
+   "hits_test": 818,
+   "latency": 14.346742976640854,
+   "remote_calls": 0.9030805687203791,
+   "remote_tokens": 357.3759478672986
+  },
+  {
+   "policy": "similarity",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.9970866441726685,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.019886363636363636,
+    "wrong_reuse": 0.019886363636363636,
+    "precision": 0.0,
+    "accuracy": 0.8820346320346321
+   },
+   "test": {
+    "hit_rate": 0.01575829383886256,
+    "wrong_reuse": 0.014928909952606635,
+    "precision": 0.05263157894736842,
+    "accuracy": 0.8831415030467163
+   },
+   "hits_test": 133,
+   "latency": 15.484994909843097,
+   "remote_calls": 0.9842417061611375,
+   "remote_tokens": 385.24360189573457
+  },
+  {
+   "policy": "numbers",
+   "embedder": "bge-m3",
+   "verifier": null,
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.0962085308056872,
+    "wrong_reuse": 0.00971563981042654,
+    "precision": 0.8990147783251231,
+    "accuracy": 0.8859851049424509
+   },
+   "hits_test": 812,
+   "latency": 14.395388350389023,
+   "remote_calls": 0.9037914691943127,
+   "remote_tokens": 357.6259478672986
+  },
+  {
+   "policy": "verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:3b-instruct",
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.8127273917198181,
+   "v": 0.2,
+   "dev": {
+    "hit_rate": 0.07054924242424243,
+    "wrong_reuse": 0.019886363636363636,
+    "precision": 0.7181208053691275,
+    "accuracy": 0.8777056277056277
+   },
+   "test": {
+    "hit_rate": 0.06433649289099526,
+    "wrong_reuse": 0.019549763033175356,
+    "precision": 0.6961325966850829,
+    "accuracy": 0.8840893703452946
+   },
+   "hits_test": 543,
+   "latency": 15.06162528117666,
+   "remote_calls": 0.9356635071090047,
+   "remote_tokens": 366.98163507109007
+  },
+  {
+   "policy": "numbers+verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:3b-instruct",
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.0962085308056872,
+    "wrong_reuse": 0.00971563981042654,
+    "precision": 0.8990147783251231,
+    "accuracy": 0.8859851049424509
+   },
+   "hits_test": 812,
+   "latency": 14.424191386028713,
+   "remote_calls": 0.9037914691943127,
+   "remote_tokens": 357.6259478672986
+  },
+  {
+   "policy": "verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:7b-instruct",
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.1,
+   "dev": {
+    "hit_rate": 0.13589015151515152,
+    "wrong_reuse": 0.019412878787878788,
+    "precision": 0.8571428571428571,
+    "accuracy": 0.8863636363636364
+   },
+   "test": {
+    "hit_rate": 0.12701421800947868,
+    "wrong_reuse": 0.01552132701421801,
+    "precision": 0.8777985074626866,
+    "accuracy": 0.8876100203114421
+   },
+   "hits_test": 1072,
+   "latency": 14.33444822852339,
+   "remote_calls": 0.8729857819905213,
+   "remote_tokens": 345.2913507109005
+  },
+  {
+   "policy": "numbers+verifier",
+   "embedder": "bge-m3",
+   "verifier": "qwen2.5:7b-instruct",
+   "target": 0.02,
+   "feasible": true,
+   "tau": 0.7982076406478882,
+   "v": 0.0,
+   "dev": {
+    "hit_rate": 0.09943181818181818,
+    "wrong_reuse": 0.008996212121212122,
+    "precision": 0.9095238095238095,
+    "accuracy": 0.887987012987013
+   },
+   "test": {
+    "hit_rate": 0.0962085308056872,
+    "wrong_reuse": 0.00971563981042654,
+    "precision": 0.8990147783251231,
+    "accuracy": 0.8859851049424509
+   },
+   "hits_test": 812,
+   "latency": 14.437746668822518,
+   "remote_calls": 0.9037914691943127,
+   "remote_tokens": 357.6259478672986
+  }
+ ]
+}
