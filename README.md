@@ -1,5 +1,7 @@
 # Correctness of semantic caching for numerical questions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23112397.svg)](https://doi.org/10.5281/zenodo.23112397)
+
 Code, prompts, all model answers and analysis for the paper *Correctness of semantic caching of language-model
 answers to numerical questions* (O. Kholodniak).
 
